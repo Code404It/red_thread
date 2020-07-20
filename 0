@@ -1,0 +1,6 @@
+      invoke  active_record
+      create    db/migrate/20200720154630_create_memories.rb
+      create    app/models/memory.rb
+      invoke    test_unit
+      create      test/models/memory_test.rb
+      create      test/fixtures/memories.yml
