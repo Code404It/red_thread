@@ -13,13 +13,13 @@
 ActiveRecord::Schema.define(version: 2020_07_20_154630) do
 
   create_table "memories", force: :cascade do |t|
+    t.integer "user_id"
     t.string "title"
     t.text "description"
     t.string "date"
     t.string "cost"
     t.string "frequency"
     t.string "image"
-    t.integer "likes", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -27,9 +27,6 @@ ActiveRecord::Schema.define(version: 2020_07_20_154630) do
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
-    t.integer "family_id"
-    t.integer "member_id"
-    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
